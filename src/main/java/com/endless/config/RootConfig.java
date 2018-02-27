@@ -123,17 +123,7 @@ public class RootConfig {
         TransactionStatus status = getDataSourceTransactionManager().getTransaction(defaultTransactionDefinition);
 		return status;
     }
-//    public void testtxManager() {
-//    	DataSourceTransactionManager tx = getDataSourceTransactionManager();
-//    	TransactionStatus status = getTransactionStatus();
-//        try {
-//	       userMapper.insertUser(user);
-//	    }catch (Exception ex) {
-//	    	tx.rollback(status);
-//	      throw ex;
-//	    }
-//	      tx.commit(status);
-//    }
+
     //事务拦截器
     @Bean(name="transactionInterceptor")
     public TransactionInterceptor interceptor(){
@@ -149,85 +139,98 @@ public class RootConfig {
         interceptor.setTransactionAttributes(transactionAttributes);
         return interceptor;
     }
-//    @Bean
-//   	public SqlSessionFactory getSqlSessionFactory() {
-//   		System.out.println("配置数据源");
-//    		DriverManagerDataSource DataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/cloud_note",
-//    			"root", "root");
-//    		DataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//   		System.out.println("加载数据库驱动");
-//   		TransactionFactory transactionFactory = new JdbcTransactionFactory();
-//   		Environment environment = new Environment("development", transactionFactory, DataSource);
-//   		org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration(environment);
-//   		System.out.println("配置sqlSessionFactory");
-//   		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(config);
-//   		sqlSessionFactory.getConfiguration().addMappers("com.endless.dao");
-//   		return sqlSessionFactory;
-//   	}
-//    2.
-//    3.##########
-//    4.# HSQLDB #
-//    5.##########
-//    6.
-//    7.#jdbc.driverClassName=org.hsqldb.jdbcDriver
-//    8.#jdbc.url=jdbc:hsqldb:hsql://localhost:9001/bookstore 
-//    9.#jdbc.username=sa
-//    10.#jdbc.password=
-//    11.
-//    12.###########
-//    13.# MySQL 5 #
-//    14.###########
-//    15.
-//    16.jdbc.driverClassName=com.mysql.jdbc.Driver
-//    17.jdbc.url=jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=GBK 
-//    18.
-//    19.jdbc.username=root
-//    20.jdbc.password=root
-//    21.
-//    22.
-//    23.##############
-//    24.# PostgreSQL #
-//    25.##############
-//    26.
-//    27.#jdbc.driverClassName=org.postgresql.Driver
-//    28.#jdbc.url=jdbc:postgresql://localhost/bookstore 
-//    29.#jdbc.username=
-//    30.#jdbc.password=
-//    31.
-//    32.##########
-//    33.# Oracle #
-//    34.##########
-//    35.
-//    36.#jdbc.driverClassName=oracle.jdbc.driver.OracleDriver
-//    37.#jdbc.url=jdbc:oracle:thin:@192.168.1.250:1521:devdb
-//    38.#jdbc.username=HFOSPSP
-//    39.#jdbc.password=HFOSPSP
-//    40.
-//    41.#############################
-//    42.# MS SQL Server 2000 (JTDS) #
-//    43.#############################
-//    44.
-//    45.#jdbc.driverClassName=net.sourceforge.jtds.jdbc.Driver
-//    46.#jdbc.url=jdbc:jtds:sqlserver://localhost:1433/bookstore 
-//    47.#jdbc.username=
-//    48.#jdbc.password=
-//    49.
-//    50.##################################
-//    51.# MS SQL Server 2000 (Microsoft) #
-//    52.##################################
-//    53.
-//    54.#jdbc.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
-//    55.#jdbc.url=jdbc:sqlserver://192.168.1.130:1433;database=ahos;user=sa;password=ahtec"; 
-//    56.#jdbc.username=sa
-//    57.#jdbc.password=ahtec
-//    58.
-//    59.########
-//    60.# ODBC #
-//    61.########
-//    62.
-//    63.#jdbc.driverClassName=sun.jdbc.odbc.JdbcOdbcDriver
-//    64.#jdbc.url=jdbc:odbc:bookstore
-//    65.#jdbc.username=
-//    66.#jdbc.password=
+/*  
+   @Bean
+   	public SqlSessionFactory getSqlSessionFactory() {
+   		System.out.println("配置数据源");
+    		DriverManagerDataSource DataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/cloud_note",
+    			"root", "root");
+    		DataSource.setDriverClassName("com.mysql.jdbc.Driver");
+   		System.out.println("加载数据库驱动");
+   		TransactionFactory transactionFactory = new JdbcTransactionFactory();
+   		Environment environment = new Environment("development", transactionFactory, DataSource);
+   		org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration(environment);
+   		System.out.println("配置sqlSessionFactory");
+   		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(config);
+   		sqlSessionFactory.getConfiguration().addMappers("com.endless.dao");
+   		return sqlSessionFactory;
+   	}*/
+//  public void testtxManager() {
+//	DataSourceTransactionManager tx = getDataSourceTransactionManager();
+//	TransactionStatus status = getTransactionStatus();
+//    try {
+//       userMapper.insertUser(user);
+//    }catch (Exception ex) {
+//    	tx.rollback(status);
+//      throw ex;
+//    }
+//      tx.commit(status);
+//}
+   /* 3.##########
+    4.# HSQLDB #
+    5.##########
+    6.
+    7.#jdbc.driverClassName=org.hsqldb.jdbcDriver
+    8.#jdbc.url=jdbc:hsqldb:hsql://localhost:9001/bookstore 
+    9.#jdbc.username=sa
+    10.#jdbc.password=
+    11.
+    12.###########
+    13.# MySQL 5 #
+    14.###########
+    15.
+    16.jdbc.driverClassName=com.mysql.jdbc.Driver
+    17.jdbc.url=jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=GBK 
+    18.
+    19.jdbc.username=root
+    20.jdbc.password=root
+    21.
+    22.
+    23.##############
+    24.# PostgreSQL #
+    25.##############
+    26.
+    27.#jdbc.driverClassName=org.postgresql.Driver
+    28.#jdbc.url=jdbc:postgresql://localhost/bookstore 
+    29.#jdbc.username=
+    30.#jdbc.password=
+    31.
+    32.##########
+    33.# Oracle #
+    34.##########
+    35.
+    36.#jdbc.driverClassName=oracle.jdbc.driver.OracleDriver
+    37.#jdbc.url=jdbc:oracle:thin:@192.168.1.250:1521:devdb
+    38.#jdbc.username=HFOSPSP
+    39.#jdbc.password=HFOSPSP
+    40.
+    41.#############################
+    42.# MS SQL Server 2000 (JTDS) #
+    43.#############################
+    44.
+    45.#jdbc.driverClassName=net.sourceforge.jtds.jdbc.Driver
+    46.#jdbc.url=jdbc:jtds:sqlserver://localhost:1433/bookstore 
+    47.#jdbc.username=
+    48.#jdbc.password=
+    49.
+    50.##################################
+    51.# MS SQL Server 2000 (Microsoft) #
+    52.##################################
+    53.
+    54.#jdbc.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+    55.#jdbc.url=jdbc:sqlserver://192.168.1.130:1433;database=ahos;user=sa;password=ahtec"; 
+    56.#jdbc.username=sa
+    57.#jdbc.password=ahtec
+    58.
+    59.########
+    60.# ODBC #
+    61.########
+    62.
+    63.#jdbc.driverClassName=sun.jdbc.odbc.JdbcOdbcDriver
+    64.#jdbc.url=jdbc:odbc:bookstore
+    65.#jdbc.username=
+    66.#jdbc.password=
 
+    */
+ 
 }
