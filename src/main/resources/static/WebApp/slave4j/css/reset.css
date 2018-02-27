@@ -1,0 +1,64 @@
+html {
+	color: #000;
+	background: #FFF;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,input,textarea,p,th,td
+	{
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,th {
+	padding: 5px;
+}
+
+img {
+	border: 0;
+}
+
+li {
+	list-style: none; /*去除样式*/
+}
+
+caption,th {
+	text-align: left;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+/*字体设置*/
+body,th,td,input,select,textarea,button {
+	font: 12px/ 1.5em Verdana, "Lucida Grande", Arial, Helvetica, sans-serif
+		;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 1.17em;
+	padding: 0.6em 0 0.2em;
+}
+
+/*超链接设置*/
+a {
+	color: #2C629E;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}

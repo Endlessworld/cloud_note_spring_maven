@@ -1,0 +1,106 @@
+/*按钮*/
+.submit {
+	padding: 0 5px;
+	height: 24px;
+	border: none;
+	background: #3B5998;
+	color: #FFF;
+	line-height: 20px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+/*区域*/
+.area {
+	border: 1px solid #FF8E00;
+	padding: 1em;
+	margin-bottom: 10px;
+}
+
+.area .separator {
+	margin: 0.5em 0em;
+	border-bottom: 1px solid #FF8E00;
+}
+
+.area2 {
+	border: 1px solid #EBE6C9;
+	padding: 1em;
+	margin-bottom: 10px;
+	background: #FCF9E6;
+}
+
+.area2 .separator {
+	margin: 0.5em 0em;
+	border-bottom: 1px solid #EBE6C9;
+}
+
+/*表格*/
+.listtable {
+	width: 100%;
+}
+
+.listtable td,.listtable th {
+	padding: 5px;
+	border-bottom: 1px dashed #ECF1F3;
+}
+
+.listtable th {
+	font-weight: bold;
+}
+
+/*圆角*/
+.searchfriend {
+	background-color: #F5F5F1;
+}
+
+.ye_r_t,.ye_l_t,.ye_r_b,.ye_l_b {
+	background: url(image/yel_bg.gif) no-repeat;
+	background-color: transparent;
+}
+
+.ye_r_t {
+	width: 100%;
+	background-position: right top;
+}
+
+.ye_l_t {
+	padding: 5px 0 0;
+	background-position: left top;
+}
+
+.ye_r_b {
+	background-position: right bottom;
+}
+
+.ye_l_b {
+	padding: 0 5px 5px;
+	background-position: left bottom;
+}
+
+/*浮动*/
+.fr {
+	float: right;
+}
+
+.fl {
+	float: left;
+}
+
+/*页头*/
+.header {
+	margin: 1em 0em;
+	border-bottom: 1px solid #ECF1F3;
+}
+
+/*页脚*/
+.footer {
+	clear: both;
+	padding: 1em 0;
+	color: #939393;
+	text-align: center;
+	border-top: 1px solid #ECF1F3;
+}
+
+.footer p {
+	font-size: 0.83em;
+}
