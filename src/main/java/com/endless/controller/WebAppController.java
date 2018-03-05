@@ -13,6 +13,7 @@ import com.endless.entity.noteBook;
 import com.endless.service.UserService;
 
 @RestController
+@RequestMapping(value = "static/WebApp/")
 public class WebAppController {
     @Autowired
     public UserService userService;

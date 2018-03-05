@@ -1,6 +1,8 @@
 package com.endless.entity;
 
-public class note {
+import com.fasterxml.jackson.databind.ser.std.SerializableSerializer;
+
+public class note  extends SerializableSerializer{
     private String cn_note_id, cn_notebook_id, cn_user_id, cn_note_title, cn_note_body, cn_note_create_time,
 	    cn_note_last_modify_time;
     private Integer cn_note_status_id, cn_note_type_id;

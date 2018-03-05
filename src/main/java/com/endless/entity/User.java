@@ -1,8 +1,13 @@
 package com.endless.entity;
 
- 
-public class User  {
-    private String id, username, password, token, nick;
+import com.fasterxml.jackson.databind.ser.std.SerializableSerializer;
+
+public class User  extends SerializableSerializer{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String id, username, password, token, nick;
 
     public String getId() {
 	return id;

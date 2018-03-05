@@ -13,6 +13,7 @@ import org.apache.ibatis.transaction.Transaction;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -72,10 +73,10 @@ public class RootConfig {
 	     return DataBuilder.build();
 			
 	 }
-	 @Bean(name="transactionFactory")
+ 	 @Bean(name="transactionFactory")
 	 public TransactionFactory TransactionFactory(){
 		 System.out.println("配置transactionFactory");
-		 TransactionFactory transactionFactory = new JdbcTransactionFactory();
+		 TransactionFactory transactionFactory =  new SpringManagedTransactionFactory();
 		return transactionFactory;
 	 }
 	 @Bean()
@@ -138,16 +139,17 @@ public class RootConfig {
         transactionAttributes.setProperty("*", "PROPAGATION_REQUIRED");
         interceptor.setTransactionAttributes(transactionAttributes);
         return interceptor;
-    }
-/*  
-   @Bean
-   	public SqlSessionFactory getSqlSessionFactory() {
+    } 
+  
+/*   @Bean
+   	public SqlSessionFactory getSqlSessionFactory(DataSource DataSource) {
    		System.out.println("配置数据源");
-    		DriverManagerDataSource DataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/cloud_note",
-    			"root", "root");
-    		DataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//    		DriverManagerDataSource DataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/cloud_note",
+//    			"root", "root");
+//    		DataSource.setDriverClassName("com.mysql.jdbc.Driver");
    		System.out.println("加载数据库驱动");
-   		TransactionFactory transactionFactory = new JdbcTransactionFactory();
+   		
+   		TransactionFactory transactionFactory = new SpringManagedTransactionFactory();
    		Environment environment = new Environment("development", transactionFactory, DataSource);
    		org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration(environment);
    		System.out.println("配置sqlSessionFactory");

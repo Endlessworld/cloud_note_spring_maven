@@ -1,6 +1,8 @@
 package com.endless.entity;
 
-public class JsonResult {
+import com.fasterxml.jackson.databind.ser.std.SerializableSerializer;
+
+public class JsonResult  extends SerializableSerializer{
     public int state = 0;
     public String msg;
     public Object obj;

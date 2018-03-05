@@ -23,12 +23,12 @@ import com.endless.entity.noteBook;
 public class UserService {
     @Autowired
     UserMapper mapper;
-    @Autowired
-    DataSourceTransactionManager transactionManager;
-    @Autowired
-    DefaultSqlSession  SqlSession;
-    @Autowired
-    SqlSessionFactory sqlSessionFactory;
+//    @Autowired
+//    DataSourceTransactionManager transactionManager;
+//    @Autowired
+//    DefaultSqlSession  SqlSession;
+//    @Autowired
+//    SqlSessionFactory sqlSessionFactory;
     public JsonResult login(String name, String password) {
     	 
     	

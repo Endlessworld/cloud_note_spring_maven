@@ -37,7 +37,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * 
  * 
  */
-@Configuration
+/*@Configuration
 @EnableAspectJAutoProxy // 相当于 xml 中的 <aop:aspectj-autoproxy/>
 @EnableTransactionManagement // 开启注解事务
 @ComponentScan(basePackages = { "com.endless" } )
@@ -78,3 +78,4 @@ public class HelloSpringApplication extends AbstractAnnotationConfigDispatcherSe
     }
 
 }
+*/
