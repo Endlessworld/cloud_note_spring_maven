@@ -35,8 +35,9 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * AbstractAnnotationConfigDispatcherServletInitializer之后，也就是间接实现了
  * WebApplicationInitializer,在 Servlet 3.0 容器中，它会被自动搜索到，被用来配置 servlet 上下文。
  * 
- * 
+ * 不使用spring boot框架时 以此为web程序性入口
  */
+ 
 /*@Configuration
 @EnableAspectJAutoProxy // 相当于 xml 中的 <aop:aspectj-autoproxy/>
 @EnableTransactionManagement // 开启注解事务
