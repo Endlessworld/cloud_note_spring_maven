@@ -10,6 +10,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.defaults.DefaultSqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
@@ -30,8 +32,6 @@ public class UserService {
 //    @Autowired
 //    SqlSessionFactory sqlSessionFactory;
     public JsonResult login(String name, String password) {
-    	 
-    	
 	System.err.println("当前密码加密\t" + DigestUtils.md5DigestAsHex(password.getBytes()).toString());
 	User user = mapper.getOnebyName(name);
 	if (user == null) {
@@ -168,6 +168,13 @@ public class UserService {
 	int x = mapper.recycleToNoteList(cn_notebook_id, cn_note_id);
 	return new JsonResult(x, x == 1 ? "恢复成功" : "恢复失败");
 
+    }
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+
+    @Scheduled(fixedRate = 5000) //通过@Scheduled声明该方法是计划任务，使用fixedRate属性每隔固定时间执行
+    @Async
+    public void reportCurrentTime(){
+        System.out.println("每隔3秒执行一次 "+dateFormat.format(new Date()));
     }
 
 }

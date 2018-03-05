@@ -11,7 +11,18 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
+/**
+ * 
+ * @author endless_z
+ * 
+ *  Spring mvc 注解组合相关
+ *  首先@EnableWebMvc=WebMvcConfigurationSupport，使用了@EnableWebMvc注解等于扩展了WebMvcConfigurationSupport但是没有重写任何方法
+ *	所以有以下几种使用方式：
+ *	1.@EnableWebMvc+extends WebMvcConfigurerAdapter，在扩展的类中重写父类的方法即可，这种方式会屏蔽springboot的@EnableAutoConfiguration中的设置
+ *  2.extends WebMvcConfigurationSupport，在扩展的类中重写父类的方法即可，这种方式会屏蔽springboot的@EnableAutoConfiguration中的设置
+ *	3.extends WebMvcConfigurerAdapter，在扩展的类中重写父类的方法即可，这种方式依旧使用springboot的@EnableAutoConfiguration中的设置
+ *	具体哪种方法适合，看个人对于项目的需求和要把控的程度
+ */
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean

@@ -32,6 +32,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.interceptor.TransactionInterceptor;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
  
+
+
 @Configuration
 public class RootConfig {
 //	 @Bean(name = "OracleDataSource")
